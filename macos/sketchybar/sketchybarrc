@@ -47,17 +47,6 @@ sketchybar --add event aerospace_mode_changed
 SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "0")
 
 for sid in $(aerospace list-workspaces --all); do
-  # Determine icon based on workspace ID
-  space_icon=""
-  case "$sid" in
-  a1) space_icon="↖" ;;
-  b1) space_icon="Q" ;;
-  b2) space_icon="W" ;;
-  b3) space_icon="E" ;;
-  b4) space_icon="R" ;;
-  *) space_icon="$sid" ;;
-  esac
-
   sketchybar --add item space.$sid left \
     --subscribe space.$sid aerospace_workspace_change \
     --set space.$sid \
@@ -68,7 +57,7 @@ for sid in $(aerospace list-workspaces --all); do
     background.padding_left=6 \
     background.padding_right=6 \
     y_offset=1 \
-    icon="$space_icon" \
+    icon="$sid" \
     icon.font="SF Pro:Bold:16.0" \
     icon.highlight_color=$ACCENT \
     label.drawing=off \
@@ -115,6 +104,12 @@ sketchybar --add item chevron left \
 
 sketchybar --add item clock right \
   --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
+  --add item volume right \
+  --set volume script="$PLUGIN_DIR/volume.sh" \
+  --subscribe volume volume_change \
+  --add item wifi right \
+  --set wifi script="$PLUGIN_DIR/wifi.sh" \
+  --subscribe wifi wifi_change \
   --add item battery right \
   --set battery update_freq=120 icon.drawing=on icon.font="Hack Nerd Font:Regular:14.0" script="$PLUGIN_DIR/battery.sh" \
   --subscribe battery system_woke power_source_change \
