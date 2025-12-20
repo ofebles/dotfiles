@@ -1,17 +1,17 @@
 ; vim: set ft=gitconfig
 [user]
-	name = Mikkel Malmberg
-	email = mikkel@brnbw.com
-	signingkey = 7B09867145A39CC3
-[includeIf "gitdir:~/dev/tp"]
-  path = "~/dev/tp/.gitconfig"
+	name = Orestes Febles
+	email = ofebles@gmail.com
+	# signingkey = 7B09867145A39CC3
+# [includeIf "gitdir:~/dev/tp"]  # Proyecto específico del usuario original
+#   path = "~/dev/tp/.gitconfig"
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 	ui = true
 [github]
-	user = mikker
+	user = ofebles
 [alias]
 	br = branch
 	ci = commit
@@ -62,9 +62,9 @@
 [credential]
 	helper = osxkeychain
 [credential "https://github.com"]
-	username = mikker
+	username = ofebles
 [commit]
-	gpgsign = true
+	# gpgsign = true  # Descomenta si tienes GPG configurado
 [merge]
 	tool = diffconflicts
 	conflictStyle = zdiff3

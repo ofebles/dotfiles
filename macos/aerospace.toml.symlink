@@ -162,6 +162,30 @@ esc = 'mode main'
 if.app-id = 'com.apple.finder'
 run = "layout floating"
 
+# --- Dev Profile Assignments ---
+
+# Workspace 1: Code (Terminal)
+# [[on-window-detected]]
+# if.app-id = 'com.mitchellh.ghostty'
+# run = 'move-node-to-workspace 1'
+
+# Workspace 2: Browser
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = 'move-node-to-workspace 2'
+
+# Workspace 6: Communication (Secondary Monitor)
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace 6'
+
+# Workspace 7: Tools
+[[on-window-detected]]
+if.app-id = 'com.postmanlabs.mac'
+run = 'move-node-to-workspace 7'
+
+# -------------------------------
+
 # [[on-window-detected]]
 # if.app-id = 'pl.maketheweb.cleanshotx'
 # run = "layout floating"
