@@ -1,0 +1,88 @@
+{
+  "actions" : [
+    {
+      "iconPath" : "apple.terminal.fill",
+      "key" : "t",
+      "label" : "Terminal",
+      "type" : "application",
+      "value" : "/Applications/Ghostty.app"
+    },
+    {
+      "iconPath" : "/Applications/Brave Browser.app",
+      "key" : "b",
+      "label" : "Brave",
+      "type" : "application",
+      "value" : "/Applications/Brave Browser.app"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/Applications/Safari.app"
+        },
+        {
+          "key" : "e",
+          "type" : "application",
+          "value" : "/Applications/Mail.app"
+        },
+        {
+          "key" : "i",
+          "type" : "application",
+          "value" : "/System/Applications/Music.app"
+        },
+        {
+          "iconPath" : "/System/Applications/Messages.app",
+          "key" : "m",
+          "label" : "Messages",
+          "type" : "application",
+          "value" : "/Applications/Messages.app"
+        },
+        {
+          "iconPath" : "sidebar.squares.leading",
+          "key" : "l",
+          "label" : "Leaderkey",
+          "type" : "command",
+          "value" : "open \"leaderkey://settings\""
+        }
+      ],
+      "key" : "o",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "e",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+        },
+        {
+          "key" : "p",
+          "type" : "url",
+          "value" : "raycast://confetti"
+        },
+        {
+          "key" : "c",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/system/open-camera"
+        }
+      ],
+      "key" : "r",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "iconPath" : "apple.terminal.fill",
+          "key" : "t",
+          "label" : "Ghostty",
+          "type" : "application",
+          "value" : "/Applications/Ghostty.app"
+        }
+      ],
+      "key" : "a",
+      "type" : "group"
+    }
+  ],
+  "type" : "group"
+}
