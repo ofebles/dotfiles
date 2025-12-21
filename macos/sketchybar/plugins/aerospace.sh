@@ -28,21 +28,5 @@ fi
 # aerospace list-windows format: window_id | app_name | window_title
 apps=$(aerospace list-windows --workspace $1 2>/dev/null | awk -F' \\| ' '{print $2}' | sort -u)
 
-icon_string=""
-if [ -n "$apps" ]; then
-  for app in $apps; do
-    __icon_map "$app"
-    if [ "$icon_result" != ":default:" ]; then
-      icon_string+="$icon_result"
-    else
-      # Si no hay icono mapeado, no ponemos nada para evitar el texto entre dos puntos
-      icon_string+=""
-    fi
-  done
-fi
-
-if [ -n "$icon_string" ]; then
-  sketchybar --set $NAME label="$icon_string" label.drawing=on
-else
-  sketchybar --set $NAME label.drawing=off
-fi
+# Simplificado: Solo mostrar el número del workspace para evitar texto feo
+sketchybar --set $NAME label.drawing=off
