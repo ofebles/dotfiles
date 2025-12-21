@@ -34,6 +34,9 @@ if [ -n "$apps" ]; then
     __icon_map "$app"
     if [ "$icon_result" != ":default:" ]; then
       icon_string+="$icon_result"
+    else
+      # Si no hay icono mapeado, no ponemos nada para evitar el texto entre dos puntos
+      icon_string+=""
     fi
   done
 fi

@@ -75,21 +75,7 @@ sketchybar --add item chevron left \
   --set chevron icon= label.drawing=off \
   --add item front_app left \
   --set front_app icon.drawing=off label.drawing=on script="$PLUGIN_DIR/front_app.sh" \
-  --subscribe front_app front_app_switched \
-  --add item front_app_layout left \
-  --set front_app_layout \
-  icon.drawing=on \
-  icon.font="Hack Nerd Font:Regular:11.0" \
-  icon.color=$GREEN \
-  icon.padding_left=6 \
-  icon.padding_right=6 \
-  label.drawing=off \
-  background.drawing=on \
-  background.color=$GREY_TRANSP \
-  background.corner_radius=4 \
-  background.height=16 \
-  script="$PLUGIN_DIR/front_app.sh" \
-  --subscribe front_app_layout front_app_switched aerospace_mode_changed
+  --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
