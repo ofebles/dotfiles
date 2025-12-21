@@ -24,6 +24,7 @@ brew("tmux")                        # Terminal multiplexer
 # ============================================================================
 
 brew("fzf")                         # Fuzzy finder
+brew("zoxide")                      # Smart directory jumper (z)
 brew("ripgrep")                     # Fast grep
 brew("fd")                          # Better find
 brew("tree")                        # Directory tree
