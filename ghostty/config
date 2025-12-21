@@ -9,10 +9,11 @@ font-family = "JetBrainsMono Nerd Font"
 font-style = "Regular"
 font-size = 14
 
-theme = tokyonight
-background-opacity = 0.95
-background-blur-radius = 20
-background-iterations = 2
+theme = catppuccin-mocha
+background = #000000
+foreground = #ffffff
+background-opacity = 1.0
+background-blur-radius = 0
 
 cursor-style = block
 cursor-color = #dd0455
