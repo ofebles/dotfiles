@@ -46,3 +46,6 @@ alias todo='git grep -l TODO | xargs -n1 git blame -f -n -w | grep "$(git config
 alias codex="codex --yolo --enable skills"
 alias amp="amp --dangerously-allow-all"
 alias claude="claude --dangerously-skip-permissions"
+
+# Dotfiles synchronization and reload
+alias dotup="cd ~/.dotfiles && git pull && source ~/.zshrc && aerospace reload-config && brew services restart sketchybar"
