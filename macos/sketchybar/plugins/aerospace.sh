@@ -9,12 +9,19 @@ source "$CONFIG_DIR/colors.sh"
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
   sketchybar --set $NAME background.drawing=on \
     background.color=$ACCENT_TRANSPARENT \
-    icon.color=$ACCENT \
-    label.color=$ACCENT
+    icon.color=$WHITE \
+    label.color=$WHITE
 else
   sketchybar --set $NAME background.drawing=off \
-    icon.color=$GREY \
-    label.color=$GREY
+    icon.color=$WHITE \
+    label.color=$WHITE
+fi
+
+# Hide workspace if no windows are present
+if [ -z "$apps" ] && [ "$1" != "$FOCUSED_WORKSPACE" ]; then
+  sketchybar --set $NAME drawing=off
+else
+  sketchybar --set $NAME drawing=on
 fi
 
 # Update app icons for this workspace
