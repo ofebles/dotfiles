@@ -11,4 +11,4 @@ COLOR=$WHITE
 if [ "$CPU_PERCENT" -gt 60 ]; then COLOR=$YELLOW; fi
 if [ "$CPU_PERCENT" -gt 85 ]; then COLOR=$RED; fi
 
-sketchybar --set $NAME label="$CPU_PERCENT%" icon= icon.color=$COLOR
+sketchybar --set $NAME label="$CPU_PERCENT%" icon=CPU icon.color=$COLOR

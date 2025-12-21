@@ -9,4 +9,4 @@ COLOR=$WHITE
 if [ "$PRESSURE" -gt 60 ]; then COLOR=$YELLOW; fi
 if [ "$PRESSURE" -gt 85 ]; then COLOR=$RED; fi
 
-sketchybar --set $NAME label="$PRESSURE%" icon= icon.color=$COLOR
+sketchybar --set $NAME label="$PRESSURE%" icon=RAM icon.color=$COLOR

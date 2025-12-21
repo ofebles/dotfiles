@@ -111,15 +111,11 @@ sketchybar --add item clock right \
   --add item battery right \
   --set battery update_freq=120 icon.drawing=on icon.font="Hack Nerd Font:Regular:14.0" script="$PLUGIN_DIR/battery.sh" \
   --subscribe battery system_woke power_source_change \
-  --add item wifi right \
-  --set wifi script="$PLUGIN_DIR/wifi.sh" \
-  --subscribe wifi wifi_change \
-  icon.padding_right=5 label.padding_right=5 \
   --add item cpu right \
-  --set cpu update_freq=5 script="$PLUGIN_DIR/cpu.sh" icon= \
+  --set cpu update_freq=5 script="$PLUGIN_DIR/cpu.sh" icon=CPU \
   icon.padding_right=2 label.padding_right=5 \
   --add item ram right \
-  --set ram update_freq=5 script="$PLUGIN_DIR/ram.sh" icon= \
+  --set ram update_freq=5 script="$PLUGIN_DIR/ram.sh" icon=RAM \
   icon.padding_right=2 label.padding_right=5 \
   --add item calendar_event right \
   --set calendar_event \
