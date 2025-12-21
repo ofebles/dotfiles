@@ -2,14 +2,16 @@
 # font-family = "Iosevka"
 # font-family = "Berkeley Mono"
 #font-family = "Cartograph CF"
-font-family = "Cascadia Code NF"
+font-family = "JetBrainsMono Nerd Font"
 # font-family = "Martian Mono"
 # font-family = "SF Mono"
 
 font-style = "Regular"
-font-size = 16
+font-size = 14
 
-theme = light:Zenbones Light,dark:Zenbones Dark
+theme = catppuccin-macchiato
+background-opacity = 0.95
+background-blur-radius = 20
 
 cursor-style = block
 cursor-color = #dd0455
