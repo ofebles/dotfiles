@@ -1,44 +1,67 @@
-console_title_template = '{{ .Shell }} in {{ .Folder }}'
 version = 3
 final_space = true
 
-[upgrade]
-source = 'cdn'
-interval = '168h'
-auto = false
-notice = false
+[transient_prompt]
+  template = "<#f4b8e4>❯</> "
+  background = "transparent"
+  foreground = "#f4b8e4"
 
 [[blocks]]
-type = 'prompt'
-alignment = 'left'
+  type = "prompt"
+  alignment = "left"
 
-[[blocks.segments]]
-type = "path"
-style = "plain"
-foreground = 'blue'
-template = "{{ .Path }} "
+  [[blocks.segments]]
+    type = "path"
+    style = "plain"
+    foreground = "#babbf1"
+    template = " {{ .Path }} "
+    [blocks.segments.properties]
+      style = "folder"
 
-[blocks.segments.properties]
-style = "folder"
+  [[blocks.segments]]
+    type = "git"
+    style = "plain"
+    foreground = "#a6d189"
+    template = " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} "
+    [blocks.segments.properties]
+      fetch_status = true
 
-[[blocks.segments]]
-type = "git"
-style = "plain"
-foreground = "yellow"
-template = "{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed)}}*{{end}} "
+  [[blocks.segments]]
+    type = "kotlin"
+    style = "plain"
+    foreground = "#e5c890"
+    template = " {{ .Full }} "
 
-[blocks.segments.properties]
-fetch_status = true
-branch_icon = ''
+  [[blocks.segments]]
+    type = "java"
+    style = "plain"
+    foreground = "#e5c890"
+    template = " {{ .Full }} "
 
-[[blocks.segments]]
-type = "text"
-style = "plain"
-foreground = "magenta"
-template = "{{ if gt .Jobs 0 }}☆ {{ .Jobs }} {{ end }}"
+[[blocks]]
+  type = "rprompt"
 
-[[blocks.segments]]
-type = "text"
-style = "plain"
-foreground = "magenta"
-template = "→ "
+  [[blocks.segments]]
+    type = "executiontime"
+    style = "plain"
+    foreground = "#e5c890"
+    template = " {{ .FormattedMs }} "
+    [blocks.segments.properties]
+      threshold = 3000
+
+  [[blocks.segments]]
+    type = "time"
+    style = "plain"
+    foreground = "#b5bfe2"
+    template = " {{ .CurrentDate | date \"15:04:05\" }}"
+
+[[blocks]]
+  type = "prompt"
+  alignment = "left"
+  newline = true
+
+  [[blocks.segments]]
+    type = "text"
+    style = "plain"
+    foreground = "#f4b8e4"
+    template = "❯"
