@@ -117,6 +117,9 @@ alt-backspace = 'balance-sizes'
 # Resize Mode (Changed to Alt+Shift+R to avoid conflict with ® symbol)
 alt-shift-r = 'mode resize'
 
+# Close focused window
+alt-shift-q = 'close'
+
 # Workspace switching with Option + Number
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
