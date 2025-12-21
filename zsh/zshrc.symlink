@@ -12,26 +12,33 @@ source $ZSH_FILES/config.zsh
 source $ZSH_FILES/bindkeys.zsh
 source $ZSH_FILES/aliases.zsh
 
-
-### Added by Zinit's installer
+### Zinit initialization
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    print -P "%F{33} %F{220}Installing Zinit…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git"
 fi
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+# Load completions before compinit
+zinit light zsh-users/zsh-completions
+
+# Initialize completion engine
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
+
+# Plugins that must be loaded after compinit
+zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light Aloxaf/fzf-tab
-
-zinit ice lucid wait'0' # what does this first line do?
+zinit ice lucid wait'0'
 zinit light joshskidmore/zsh-fzf-history-search
 
 # Initialize zoxide (smart cd)
@@ -43,21 +50,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 eval "$(oh-my-posh init zsh --config $ZSH_FILES/omp.toml)"
 
-# Initialize completion engine with caching
-autoload -Uz compinit
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit
-else
-  compinit -C
-fi
-
 # Local modifications
 [[ -f ~/.lrc ]] && .  ~/.lrc
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# FZF initialization (Key bindings and fuzzy completion)
+# FZF initialization
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
