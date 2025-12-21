@@ -163,10 +163,11 @@ cask("tg-pro")                      # Mac temperature monitor (ya tienes)
 
 # ============================================================================
 # Fonts
-# ============================================================================
-
 cask("font-hack-nerd-font")         # Ya tienes
 cask("font-jetbrains-mono-nerd-font")  # Agregar (excelente para código)
+tap("kvndrsslr/tinted-theming")
+brew("kvndrsslr/tinted-theming/sketchybar-app-font") # Iconos de apps para Sketchybar
+
 
 # ============================================================================
 # Mac App Store Apps (opcional - requieren instalación manual previa)
