@@ -9,11 +9,11 @@ font-family = "JetBrainsMono Nerd Font"
 font-style = "Regular"
 font-size = 14
 
-theme = tokyonight-storm
+theme = catppuccin-frappe
 background = #000000
-foreground = #c0caf5
+foreground = #c6d0f5
 font-size = 15
-font-family = "JetBrainsMono Nerd Font"
+font-family = "JetBrains Mono Nerd Font"
 
 cursor-style = block
 cursor-color = #dd0455
