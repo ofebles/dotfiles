@@ -1,8 +1,10 @@
 # General
 alias so='source'
-alias l='ls'
-alias ll='ls -lh'
-alias la='ls -a'
+alias l='eza -lh --icons --grid --group-directories-first'
+alias ll='eza -lh --icons --group-directories-first'
+alias la='eza -lah --icons --group-directories-first'
+alias lt='eza --tree --level=2 --icons'
+alias cat='bat'
 alias ddate='date +"%Y-%m-%d"'
 alias mux='tmuxinator'
 alias rm_orig="find . -name '*.orig' -exec rm {} \;"

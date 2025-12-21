@@ -69,6 +69,9 @@ brew("telnet")                      # Útil para debugging
 brew("coreutils")                   # GNU core utilities
 brew("htop")                        # Process monitor (agregar)
 brew("ncdu")                        # Disk usage (agregar)
+brew("bat")                         # cat with wings
+brew("eza")                         # modern ls
+brew("atuin")                       # shell history
 
 # ============================================================================
 # Development Tools
