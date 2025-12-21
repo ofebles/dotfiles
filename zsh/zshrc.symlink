@@ -56,3 +56,8 @@ fi
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# FZF initialization (Key bindings and fuzzy completion)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
