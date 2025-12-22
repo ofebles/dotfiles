@@ -97,6 +97,16 @@ sketchybar --add item clock right \
   --add item battery right \
   --set battery update_freq=120 icon.drawing=on icon.font="Hack Nerd Font:Regular:14.0" script="$PLUGIN_DIR/battery.sh" \
   --subscribe battery system_woke power_source_change \
+  --add item outlook_info right \
+  --set outlook_info update_freq=60 \
+                     icon.font="sketchybar-app-font:Regular:14.0" \
+                     icon=:microsoft_outlook: \
+                     script="$PLUGIN_DIR/microsoft_apps.sh" \
+  --add item teams_info right \
+  --set teams_info   update_freq=60 \
+                     icon.font="sketchybar-app-font:Regular:14.0" \
+                     icon=:microsoft_teams: \
+                     script="$PLUGIN_DIR/microsoft_apps.sh" \
   --add item calendar_event right \
   --set calendar_event \
   update_freq=60 \
