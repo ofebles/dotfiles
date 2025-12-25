@@ -2,11 +2,11 @@
 
 options=(
   style=round
-  width=7.5
+  width=4.0
   hidpi=on
-  active_color=0xffff0566
-  background_color=0x000000
-  blacklist="Leader Key,CleanShot,Tuna"
+  active_color=0xff00ff00
+  inactive_color=0x00000000
+  whitelist="Microsoft Teams,Microsoft Teams (work or school),Terminal,iTerm2,Ghostty,Alacritty,Kitty,Google Chrome,Safari,Firefox,Brave Browser,Arc"
 )
 
 borders "${options[@]}"

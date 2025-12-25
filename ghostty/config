@@ -4,9 +4,7 @@ font-style = "Regular"
 font-size = 15
 
 # Theme configuration
-theme = catppuccin-frappe
-background = #000000
-foreground = #c6d0f5
+theme = Catppuccin Frappe
 
 # Cursor configuration
 cursor-style = block
