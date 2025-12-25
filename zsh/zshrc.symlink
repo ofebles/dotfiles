@@ -62,4 +62,3 @@ eval "$(oh-my-posh init zsh --config $ZSH_FILES/omp.toml)"
 # Configure Docker to use Podman socket
 export DOCKER_HOST="unix:///var/folders/kl/vhvkh6jn7mj4d7mtp3mjbv_00000gr/T/podman/podman-machine-default-api.sock"
 export TESTCONTAINERS_RYUK_DISABLED=true
-export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/Users/ofebles/.colima/arm64/docker.sock
