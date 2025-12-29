@@ -37,14 +37,14 @@ if [ "$TEAMS_COUNT" = "missing value" ]; then TEAMS_COUNT="0"; fi
 
 # Update Outlook item
 if [ "$OUTLOOK_COUNT" -gt 0 ]; then
-  sketchybar --set outlook_info drawing=on label="$OUTLOOK_COUNT" icon.color="$BLUE"
+  sketchybar --set outlook_info drawing=on label="$OUTLOOK_COUNT" icon.color="$WHITE"
 else
   sketchybar --set outlook_info drawing=off
 fi
 
 # Update Teams item
 if [ "$TEAMS_COUNT" -gt 0 ]; then
-  sketchybar --set teams_info drawing=on label="$TEAMS_COUNT" icon.color="$MAGENTA"
+  sketchybar --set teams_info drawing=on label="$TEAMS_COUNT" icon.color="$WHITE"
 else
   sketchybar --set teams_info drawing=off
 fi
