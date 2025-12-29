@@ -99,19 +99,19 @@ sketchybar --add item clock right \
   --set battery update_freq=120 icon.drawing=on icon.font="Hack Nerd Font:Regular:14.0" script="$PLUGIN_DIR/battery.sh" \
   --subscribe battery system_woke power_source_change \
   --add item outlook_info right \
-  --set outlook_info update_freq=60 \
+  --set outlook_info update_freq=600 \
                      icon.font="Hack Nerd Font:Regular:14.0" \
                      icon="󰴢" \
                      script="$PLUGIN_DIR/microsoft_apps.sh" \
                      click_script="open -a 'Microsoft Outlook'" \
   --add item teams_info right \
-  --set teams_info   update_freq=60 \
+  --set teams_info   update_freq=600 \
                      icon.font="Hack Nerd Font:Regular:14.0" \
                      icon="󰴨" \
                      script="$PLUGIN_DIR/microsoft_apps.sh" \
                      click_script="open -a 'Microsoft Teams'" \
   --add item reminders right \
-  --set reminders update_freq=60 \
+  --set reminders update_freq=900 \
                   script="$PLUGIN_DIR/reminders.sh" \
                   click_script="open -a Reminders" \
                   icon.font="Hack Nerd Font:Regular:14.0" \
