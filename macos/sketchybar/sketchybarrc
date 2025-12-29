@@ -119,5 +119,11 @@ sketchybar --add item clock right \
   background.corner_radius=8 \
   background.height=25
 
+##### System Status Items #####
+sketchybar --add item wifi right \
+           --set wifi script="$PLUGIN_DIR/wifi.sh" \
+                      update_freq=10 \
+           --subscribe wifi wifi_change system_woke
+
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
