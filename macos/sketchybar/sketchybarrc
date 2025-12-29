@@ -90,11 +90,6 @@ sketchybar --add item chevron left \
 
 sketchybar --add item clock right \
   --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
-  --add item volume right \
-  --set volume script="$PLUGIN_DIR/volume.sh" \
-  --subscribe volume volume_change \
-  click_script="open 'x-apple.systempreferences:com.apple.preference.sound'" \
-  icon.padding_right=2 label.padding_right=10 \
   --add item wifi right \
   --set wifi script="$PLUGIN_DIR/wifi.sh" \
              update_freq=10 \
