@@ -32,7 +32,7 @@ if [ -n "$OUTPUT" ] && [ "$OUTPUT" != "" ]; then
         # 1. It hasn't started yet (TIME_DIFF < 0), OR  
         # 2. It started less than 5 minutes ago (0 <= TIME_DIFF <= 5)
         if [ $TIME_DIFF -le 5 ]; then
-          LABEL="$EVENT_TIME $CURRENT_EVENT_TITLE"
+          LABEL="$EVENT_TIME"
           break
         fi
       fi
