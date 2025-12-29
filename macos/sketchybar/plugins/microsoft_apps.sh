@@ -2,47 +2,36 @@
 
 source "$CONFIG_DIR/colors.sh"
 
+get_dock_badge() {
+  app_name="$1"
+  osascript -e "
+    tell application \"System Events\"
+      tell process \"Dock\"
+        try
+          return value of attribute \"AXStatusLabel\" of UI element \"$app_name\" of list 1
+        on error
+          return \"0\"
+        end try
+      end tell
+    end tell" 2>/dev/null
+}
+
 # OUTLOOK
-OUTLOOK_COUNT=$(osascript -e '
-if application "Microsoft Outlook" is running then
-	tell application "Microsoft Outlook"
-		set unreadCount to 0
-		repeat with theAccount in every main account
-			set unreadCount to unreadCount + (unread count of inbox of theAccount)
-		end repeat
-		return unreadCount
-	end tell
-else
-	return 0
-end if' 2>/dev/null)
+# Try getting count from Dock badge (works for New and Old Outlook)
+OUTLOOK_COUNT=$(get_dock_badge "Microsoft Outlook")
 
 # TEAMS
-# Try both common process names
-TEAMS_COUNT=$(osascript -e '
-tell application "System Events"
-	set processName to ""
-	if exists (process "Microsoft Teams") then
-		set processName to "Microsoft Teams"
-	else if exists (process "Microsoft Teams (work or school)") then
-		set processName to "Microsoft Teams (work or school)"
-	end if
-	
-	if processName is not "" then
-		tell process "Dock"
-			try
-				set badgeValue to value of attribute "AXStatusLabel" of UI element processName of list 1
-				if badgeValue is missing value then set badgeValue to "0"
-				return badgeValue
-			on error
-				return "0"
-			end try
-		end tell
-	else
-		return "0"
-	end if
-end tell' 2>/dev/null)
+# Check for both common names
+TEAMS_COUNT=$(get_dock_badge "Microsoft Teams")
+if [ "$TEAMS_COUNT" = "0" ] || [ -z "$TEAMS_COUNT" ]; then
+  TEAMS_COUNT=$(get_dock_badge "Microsoft Teams (work or school)")
+fi
 
-# Reset counts if they are not numbers (sometimes "AXStatusLabel" returns text or empty)
+# Clean up outputs (sometimes returns "missing value" or text)
+if [ "$OUTLOOK_COUNT" = "missing value" ]; then OUTLOOK_COUNT="0"; fi
+if [ "$TEAMS_COUNT" = "missing value" ]; then TEAMS_COUNT="0"; fi
+
+# Ensure they are numbers
 [[ $OUTLOOK_COUNT =~ ^[0-9]+$ ]] || OUTLOOK_COUNT=0
 [[ $TEAMS_COUNT =~ ^[0-9]+$ ]] || TEAMS_COUNT=0
 
@@ -54,7 +43,7 @@ else
 fi
 
 # Update Teams item
-if [ "$TEAMS_COUNT" != "0" ] && [ -n "$TEAMS_COUNT" ]; then
+if [ "$TEAMS_COUNT" -gt 0 ]; then
   sketchybar --set teams_info drawing=on label="$TEAMS_COUNT" icon.color="$MAGENTA"
 else
   sketchybar --set teams_info drawing=off

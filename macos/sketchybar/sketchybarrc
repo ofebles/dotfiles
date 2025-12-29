@@ -100,14 +100,16 @@ sketchybar --add item clock right \
   --subscribe battery system_woke power_source_change \
   --add item outlook_info right \
   --set outlook_info update_freq=60 \
-                     icon.font="sketchybar-app-font:Regular:14.0" \
-                     icon=:microsoft_outlook: \
+                     icon.font="Hack Nerd Font:Regular:14.0" \
+                     icon="󰴢" \
                      script="$PLUGIN_DIR/microsoft_apps.sh" \
+                     click_script="open -a 'Microsoft Outlook'" \
   --add item teams_info right \
   --set teams_info   update_freq=60 \
-                     icon.font="sketchybar-app-font:Regular:14.0" \
-                     icon=:microsoft_teams: \
+                     icon.font="Hack Nerd Font:Regular:14.0" \
+                     icon="󰴨" \
                      script="$PLUGIN_DIR/microsoft_apps.sh" \
+                     click_script="open -a 'Microsoft Teams'" \
   --add item reminders right \
   --set reminders update_freq=60 \
                   script="$PLUGIN_DIR/reminders.sh" \
