@@ -92,7 +92,7 @@ sketchybar --add item clock right \
   --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
   --add item wifi right \
   --set wifi script="$PLUGIN_DIR/wifi.sh" \
-             update_freq=10 \
+             update_freq=60 \
   --subscribe wifi wifi_change system_woke \
   click_script="open 'x-apple.systempreferences:com.apple.preference.network'" \
   --add item battery right \
@@ -117,7 +117,7 @@ sketchybar --add item clock right \
                   icon.font="Hack Nerd Font:Regular:14.0" \
   --add item calendar_event right \
   --set calendar_event \
-  update_freq=60 \
+  update_freq=300 \
   script="$PLUGIN_DIR/calendar_event.sh" \
   click_script="open -a Calendar" \
   icon.font="Hack Nerd Font:Regular:14.0" \
