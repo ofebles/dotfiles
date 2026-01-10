@@ -13,13 +13,13 @@ after-startup-command = []
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
-enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers = true
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 20
+accordion-padding = 10
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -45,7 +45,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "6"]
+persistent-workspaces = ["1", "2", "3"]
 
 # Hooks
 
@@ -70,15 +70,11 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 8
-inner.vertical = 8
+inner.horizontal = 4
+inner.vertical = 4
 outer.left = 8
 outer.bottom = 8
-outer.top = [
-{ monitor."built-in" = 12 },
-{ monitor."main" = 42 },
-42
-]
+outer.top = 0
 outer.right = 8
 
 # 'main' binding mode declaration
@@ -161,9 +157,7 @@ esc = 'mode main'
 # check-further-callbacks = true
 # run = "layout accordion"
 
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = "layout floating"
+
 
 # --- Dev Profile Assignments ---
 
